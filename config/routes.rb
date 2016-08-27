@@ -1,4 +1,5 @@
 DynamicRoles::Engine.routes.draw do
-  resources :roles
-  resources :permissions
+  resources :roles do
+    resources :permissions, only: [:new, :create, :destroy]
+  end
 end
