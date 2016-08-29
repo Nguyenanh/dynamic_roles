@@ -1,7 +1,7 @@
 require_dependency "dynamic_roles/application_controller"
 
 module DynamicRoles
-  class PermissionsController < ApplicationController
+  class PermissionsController < DynamicRoles::ApplicationController
     before_action :load_instance_role, only: [:new]
 
     def new

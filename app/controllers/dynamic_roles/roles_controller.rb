@@ -1,7 +1,7 @@
 require_dependency "dynamic_roles/application_controller"
 
 module DynamicRoles
-  class RolesController < ApplicationController
+  class RolesController < DynamicRoles::ApplicationController
     before_action :set_role, only: [:show, :edit, :update, :destroy]
 
     # GET /roles
