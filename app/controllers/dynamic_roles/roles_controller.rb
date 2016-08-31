@@ -15,6 +15,8 @@ module DynamicRoles
 
     # GET /roles/new
     def new
+      # fake data
+      @permissions = Permission.all
       @role = DynamicRoles::Role.new
     end
 
