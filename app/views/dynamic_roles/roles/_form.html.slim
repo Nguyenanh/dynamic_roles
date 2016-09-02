@@ -1,0 +1,24 @@
+= form_for(@role) do |f|
+  - if @role.errors.any?
+    #error_explanation
+      h2 "#{pluralize(@role.errors.count, 'error')} prohibited this role from being saved:"
+      ul
+      - @role.errors.full_messages.each do |message|
+        li = message
+  .row
+    .col-md-4.col-md-offset-2
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+
+      = label_tag :description
+      = text_area_tag :description, "", class: "form-control"
+
+      = f.submit "Submit", class: "btn-primary form-control"
+      = link_to 'Back', roles_path
+
+    .col-md-4
+      = label_tag "Rule name"
+      = select_tag "select rule", options_for_select(@permissions.collect{ |p| [p.name, p.id] }, ""), { class: "form-control" }
+
+      = label_tag :data
+      = text_area_tag :data, "", class: "form-control"

@@ -1,0 +1,25 @@
+.row.col-md-8.col-md-offset-2
+  h2 Roles
+  = link_to 'New Role', new_role_path
+  table.table.table-hover.table-bordered
+    thead
+      tr
+        th #
+        th Name roles
+        th Description
+        th
+    tbody
+      tr
+        td
+        td = text_field_tag :name_role, "", class: "form-control"
+        td = text_field_tag :description_role, "", class: "form-control"
+        td
+      - @roles.each_with_index do |role, index|
+        tr
+          td = index.next
+          td = role.name
+          td
+          td
+            = link_to 'Show', role
+            = link_to 'Edit', edit_role_path(role)
+            = link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' }

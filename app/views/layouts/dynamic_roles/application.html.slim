@@ -1,0 +1,28 @@
+doctype html
+html lang="en"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    title DynamicRoles
+    = stylesheet_link_tag "dynamic_roles/application", media: 'all'
+    = csrf_meta_tags
+    = javascript_include_tag "dynamic_roles/application"
+body
+  nav.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        a.navbar-brand
+          | DynamicRoles
+      ul.nav.navbar-nav
+        li.active
+          a[href="#"] Home
+      ul.nav.navbar-nav.navbar-right
+        li
+          a[href="#"]
+            span.glyphicon.glyphicon-user
+            |  Sign Up
+        li
+          a[href="#"]
+            span.glyphicon.glyphicon-log-in
+            |  Login
+  = yield

@@ -18,6 +18,12 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1"
-
   s.add_development_dependency "sqlite3"
+
+  s.add_runtime_dependency 'sass-rails', ['>= 4.0', '< 6']
+  s.add_runtime_dependency 'bootstrap-sass', '>= 3.3.2'
+  s.add_runtime_dependency 'coffee-rails', '~> 4.0'
+  s.add_runtime_dependency 'font-awesome-rails', ['>= 3.0', '< 5']
+  s.add_runtime_dependency 'slim-rails', '~> 3.1.0'
+  s.add_runtime_dependency 'jquery-rails', ['>= 3.0', '< 5']
 end
